@@ -26,7 +26,7 @@ async function main() {
   });
 
   const contractPath = path.resolve("contracts/freelance_escrow.py");
-  const contractCode = readFileSync(contractPath, "utf-8");
+  const contractCode = new Uint8Array(readFileSync(contractPath));
   console.log(`Contract loaded: ${contractPath} (${contractCode.length} bytes)`);
 
   console.log("\nInitializing consensus smart contract...");
